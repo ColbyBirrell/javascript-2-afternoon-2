@@ -250,7 +250,11 @@ for (var i = 0; i < num2; i++) {
   Return the longer of the two arrays.
 */
 
-//Code Here
+let longer = (arr1, arr2) => {
+  if (arr1.length > arr2.length) {
+    return arr1;
+  } else return arr2;
+};
 
 /*
   As a continuation of the previous problem, write another function called 'both'.
@@ -260,7 +264,19 @@ for (var i = 0; i < num2; i++) {
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
+// let newArr = [];
+let matchArr = [];
+let both = (arr1, arr2) => {
+  for (let i = 0; i < arr1.length; i++) {
+    for (let j = 0; j < arr2.length; j++) {
+      if (arr1[i] === arr2[j]) {
+        matchArr.push(arr1[i]);
+      }
+    }
+  }
+  // console.log(matchArr);
+  return matchArr;
+};
 
 ////////// PROBLEM 12 //////////
 
@@ -299,14 +315,20 @@ var colt = {
   After that, console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
+devMountainEmployees = [joe, cahlan, ryan, colt];
+
+// console.log(devMountainEmployees.length);
 
 /*
   Now let's say Cahlan has to take a leave of absence.
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+for (let i = 0; i < devMountainEmployees.length; i++) {
+  if (devMountainEmployees[i] === cahlan) {
+    devMountainEmployees.splice(i, 1);
+  }
+}
 
 ////////// PROBLEM 13 //////////
 
@@ -315,7 +337,7 @@ var colt = {
   Create an empty array called users.
 */
 
-//Code Here
+let users = [];
 
 /*
   Now add three user objects to your users array. Each user object should contain the following properties: name, email, password, username.
@@ -334,7 +356,23 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
+var user2 = {
+  name: "joe",
+  email: "mjoever@devmounta.in",
+  password: "hur2",
+  username: "ihazcode"
+};
+
+var user3 = {
+  name: "bill",
+  email: "dude@didkjaf;s",
+  password: "hr2",
+  username: "dfads"
+};
+
+users.push(user1, user2, user2);
+
+console.log(users);
 
 /*
   Now you have a very common data structure. 
@@ -346,7 +384,11 @@ var user1 = {
   Once you find the array index he's located in, delete him from the array.
 */
 
-//Code Here
+for (i = 0; i < users.length; i++) {
+  if (users[i].email === "mark.mciver@devmounta.in") {
+    users.splice(i, 1);
+  }
+}
 
 /*
   The activity we just did is very much how data works in 'the real world'.
